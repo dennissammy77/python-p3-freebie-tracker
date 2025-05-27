@@ -38,12 +38,12 @@ alembic upgrade head
 ```
 4. Seed the Database
 ```
-python seed.py
+python lib/seed.py
 ```
 5. Start Debug Console
 Test your models and methods in an interactive session:
 ```
-python debug.py
+python lib/debug.py
 ```
 
 ## Database Schema
