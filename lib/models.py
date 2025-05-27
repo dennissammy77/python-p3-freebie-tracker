@@ -1,15 +1,9 @@
 from sqlalchemy import ForeignKey, Column, Integer, String, MetaData, create_engine
 from sqlalchemy.orm import relationship, backref, sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
-
-convention = {
-    "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
-}
-metadata = MetaData(naming_convention=convention)
+from base import Base
 DATABASE_URL = "sqlite:///freebies.db"  # load live database / hosted db 
 engine = create_engine(DATABASE_URL, echo=False)
 Session = sessionmaker(bind=engine) # session blueprint 
-Base = declarative_base(metadata=metadata)
 
 class Company(Base):
     __tablename__ = 'companies'
